@@ -1,0 +1,30 @@
+.login_singup_radius {
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+#signupUsername:focus,
+#singupEmail:focus,
+#singupPassword:focus,
+#loginUsername:focus,
+#loginPassword:focus {
+    border: 1px solid #6a6a6a !important;
+    border-bottom: 3px solid #6a6a6a !important;
+}
+
+.signupSubmitBtn, 
+.loginSubmitBtn {
+    background: linear-gradient(90deg, rgba(255, 111, 137, 1) 0%, rgba(255, 56, 92, 1) 30%, rgb(240, 50, 85) 80%);
+    border: none;
+}
+
+.signup-form, 
+.login-form {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
