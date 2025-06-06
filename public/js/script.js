@@ -1,4 +1,5 @@
 
+// js for bootstrap validation
 (() => {
   'use strict'
 
@@ -16,4 +17,29 @@
       form.classList.add('was-validated')
     }, false)
   })
-})()
+})();
+
+
+// script for search bar in navbar.ejs
+document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("searchToggle");
+        const searchInput = document.querySelector(".search-input");
+        const micIcon = document.querySelector(".right-icon");
+
+        toggleBtn.addEventListener("click", () => {
+            searchInput.classList.toggle("expanded");
+             toggleBtn.classList.toggle("no-border");
+
+            if (searchInput.classList.contains("expanded")) {
+                micIcon.style.display = "block" // Show mic icon
+            } else {
+                micIcon.style.display = "none";   // Hide mic icon
+            }
+        });
+    });
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 <% layout("layouts/boilerplate.ejs") %>
 
 
-    <div class="row my-3">
-        <div class="col-6 offset-3 signup-form">
+    <div class="row justify-content-center my-3">
+        <div class="col-lg-6 col-10 signup-form">
             <h4 class="text-center">Signup Your Account</h4>
             <form action="/signup" method="POST" class="needs-validation" novalidate>
                 <div class="mb-3">
@@ -23,9 +23,15 @@
                     <input type="text" name="password" class=" form-control border w-100 p-2 login_singup_radius"
                         id="singupPassword" placeholder="Password" required>
                 </div>
-                <div class="text-center ">
-                    <button class="login_singup_radius w-50 p-2 signupSubmitBtn text-white">Login</button>
+                <div class="text-center mb-3">
+                    <button class="login_singup_radius w-50 p-2 signupSubmitBtn text-white">SignUp</button>
+                </div>
+                 <div class="d-flex gap-2">
+                    <p class="text-decoration-underline">Don't have an Account? </p>
+                    <a class="text-decoration-none fe424d" href="/login">Login</a>
                 </div>
             </form>
         </div>
     </div>
+
+    

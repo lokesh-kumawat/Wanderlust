@@ -2,12 +2,23 @@ const Listing = require("../models/listing")
 
 // for index router
 module.exports.index = async (req, res) => {
-    const allListings = await Listing.find({});
-    res.render("listings/index.ejs", { allListings })
+    const { search } = req.query;
+    let allListings
+
+    if (search) {
+        const regex = new RegExp(escapeRegex(search), 'i');
+        allListings = await Listing.find({ $or: [{ title: regex }, { location: regex }, { country: regex } ] });
+    }
+    else {
+        allListings = await Listing.find({});
+    }
+
+    res.render("listings/index.ejs", { allListings, search })
 }
 
 
 // open new form
+
 module.exports.renderNewForm = (req, res) => {
     console.log(req.user);
     res.render("listings/new.ejs");
@@ -94,5 +105,8 @@ module.exports.deleteListing = async (req, res) => {
 
 
 
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
 
 

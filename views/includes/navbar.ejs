@@ -1,61 +1,33 @@
 
-<style> 
-    .search-btn {
-        background-color: #fe424d;
-        color: #ffff;
-        border-radius: 25px;
-        padding: 0 1rem 0 1rem;
-    }
-
-    .search-btn:hover {
-        background-color: #fe424d !important;
-        color: #ffff !important;
-    }
-
-    .search-btn i {
-        display: inline;
-        margin-right: 0.5rem;
-    }
-
-    .search-input {
-        border-radius: 25px;
-        padding: 0.5rem 3rem 0.5rem 3rem;
-        font-size: 0.9rem;
-
-    }
-
-</style>
-
-<nav class="navbar navbar-expand-md  border-bottom sticky-top bg-white">
+<nav class="navbar navbar-expand-md  border-bottom sticky-top bg-white ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/listing"><i class="fa-regular fa-compass"></i></a>
+        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse bg-white" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse bg-white " id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link" href="/listings">Explore</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 search-input" type="search" placeholder="Search destinations"/>
-                    <button class="btn search-btn" type="submit">
-                       <i class="fa-solid fa-magnifying-glass"></i>Search
-                    </button>
+                <!-- search input -->
+                <form action="/listings" method="GET" role="search" class="d-flex position-relative" id="searchForm">
+                    <div class="d-flex align-items-center position-relative">
+                        <input class="form-control ps-5 pe-5 search-input collapsed" name="search" type="search"
+                            placeholder="Search destinations" />
+                        <i class="fa-solid fa-magnifying-glass search-icon-inside left-icon" id="searchToggle"></i>
+                        <i class="fa-solid fa-microphone search-icon-inside right-icon"></i>
+                    </div>
                 </form>
-            </div>
-            <div class="navbar-nav ms-auto">
-                   <a class="nav-link" href="/listings/new">Add new Listing</a>
+
+                <a class="nav-link" href="/listings/new">Add new Listing</a>
                 <% if(!currUser) { %>
-                    <a class="nav-link active" href="/login"> <b>Login</b></a>
-                    <a class="nav-link" href="/signup"><b>SignUp</b></a>
+                    <a class="nav-link fw-semibold href="/login">Login</a>
                     <% } %>
                         <% if(currUser) { %>
-                            <a class="nav-link" href="/logout">Logout</a>
-                    <% } %>
+                            <a class="nav-link fw-semibold" href="/logout">Logout</a>
+                            <% } %>
             </div>
         </div>
-
-        
     </div>
 </nav>

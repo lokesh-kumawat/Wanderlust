@@ -38,7 +38,7 @@ module.exports.validateListing = (req, res, next) => {
 };
 
 
-// middleware for check the owner for edit, update, delete and more
+// middleware for check the owner for edit, update, delete review and more
 module.exports.isReviewAuthor = async (req, res, next) => {
   let { id, reviewId } = req.params;
   const review = await Review.findById(reviewId);
