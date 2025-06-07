@@ -22,21 +22,43 @@
 
 // script for search bar in navbar.ejs
 document.addEventListener("DOMContentLoaded", () => {
-        const toggleBtn = document.getElementById("searchToggle");
-        const searchInput = document.querySelector(".search-input");
-        const micIcon = document.querySelector(".right-icon");
+    // -------------------- MOBILE SEARCH --------------------
+    const mobileToggleBtn = document.getElementById("mobileSearchToggle");
+    const mobileSearchInput = document.querySelector("#mobileSearchForm .search-input");
+    const mobileMicIcon = document.querySelector("#mobileSearchForm .right-icon");
 
-        toggleBtn.addEventListener("click", () => {
-            searchInput.classList.toggle("expanded");
-             toggleBtn.classList.toggle("no-border");
+    if (mobileToggleBtn && mobileSearchInput && mobileMicIcon) {
+        mobileToggleBtn.addEventListener("click", () => {
+            mobileSearchInput.classList.toggle("expanded");
+            mobileToggleBtn.classList.toggle("no-border");
 
-            if (searchInput.classList.contains("expanded")) {
-                micIcon.style.display = "block" // Show mic icon
+            if (mobileSearchInput.classList.contains("expanded")) {
+                mobileMicIcon.style.display = "block"; // Show mic icon
             } else {
-                micIcon.style.display = "none";   // Hide mic icon
+                mobileMicIcon.style.display = "none";  // Hide mic icon
             }
         });
-    });
+    }
+
+    // -------------------- DESKTOP SEARCH --------------------
+    const desktopToggleBtn = document.getElementById("desktopSearchToggle");
+    const desktopSearchInput = document.querySelector("#desktopSearchForm .search-input");
+    const desktopMicIcon = document.querySelector("#desktopSearchForm .right-icon");
+
+    if (desktopToggleBtn && desktopSearchInput && desktopMicIcon) {
+        desktopToggleBtn.addEventListener("click", () => {
+            desktopSearchInput.classList.toggle("expanded");
+            desktopToggleBtn.classList.toggle("no-border");
+
+            if (desktopSearchInput.classList.contains("expanded")) {
+                desktopMicIcon.style.display = "block"; // Show mic icon
+            } else {
+                desktopMicIcon.style.display = "none";  // Hide mic icon
+            }
+        });
+    }
+});
+
 
 
 

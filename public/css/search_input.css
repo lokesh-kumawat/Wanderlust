@@ -20,13 +20,19 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 544px) {
+@media (max-width: 650px) {
     .search-input.expanded {
        width: 250px;
     }
 }
 
-#searchToggle {
+@media (max-width: 380px) {
+    .search-input.expanded {
+       width: 220px;
+    }
+}
+
+#mobileSearchToggle, #desktopSearchToggle {
     cursor: pointer;
     font-size: 1.2rem;
     color: #fe424d;

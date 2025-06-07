@@ -1,8 +1,19 @@
 
+
 <nav class="navbar navbar-expand-md  border-bottom sticky-top bg-white ">
     <div class="container-fluid">
         <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <!-- serch for moblie -->
+        <form action="/listings" method="GET" role="search" class=" ms-auto position-relative d-block d-md-none" id="mobileSearchForm">
+                    <div class="d-flex align-items-center position-relative">
+                        <input class="form-control ps-5 pe-2 search-input collapsed" name="search" type="search"
+                            placeholder="Search" />
+                        <i class="fa-solid fa-magnifying-glass search-icon-inside left-icon" id="mobileSearchToggle"></i>
+                        <i class="fa-solid fa-microphone search-icon-inside right-icon" id="mobileMicIcon"></i>
+                    </div>
+                </form>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse bg-white " id="navbarNavAltMarkup">
@@ -10,13 +21,13 @@
                 <a class="nav-link" href="/listings">Explore</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <!-- search input -->
-                <form action="/listings" method="GET" role="search" class="d-flex position-relative" id="searchForm">
+                <!-- search for large -->
+                <form action="/listings" method="GET" role="search" class="align-content-around position-relative d-none d-md-block" id="desktopSearchForm">
                     <div class="d-flex align-items-center position-relative">
                         <input class="form-control ps-5 pe-5 search-input collapsed" name="search" type="search"
                             placeholder="Search destinations" />
-                        <i class="fa-solid fa-magnifying-glass search-icon-inside left-icon" id="searchToggle"></i>
-                        <i class="fa-solid fa-microphone search-icon-inside right-icon"></i>
+                        <i class="fa-solid fa-magnifying-glass search-icon-inside left-icon" id="desktopSearchToggle"></i>
+                        <i class="fa-solid fa-microphone search-icon-inside right-icon" id="desktopMicIcon"></i>
                     </div>
                 </form>
 
